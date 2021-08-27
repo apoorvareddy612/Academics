@@ -20,6 +20,7 @@ public class sts1 {
             }
 
         }
+        System.out.println("GCD : " + gcd);
 
        
     } 

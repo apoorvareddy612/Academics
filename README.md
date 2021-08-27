@@ -5,6 +5,9 @@
 IWP/Exercise-2
 <img src="https://user-images.githubusercontent.com/61325120/129335454-c14fcb8d-0037-459e-8eb8-6954f4c677a0.png" alt="drawing" width="700"/>
 <img src="https://user-images.githubusercontent.com/61325120/129335501-952ae54e-7fae-45e4-9a42-fdfeeb5be8ec.png" alt="drawing" width="700"/>
+IWP/Exercise-3
+<img src="https://user-images.githubusercontent.com/61325120/131072321-63e3b1b2-c190-4061-b2db-c55070629eef.png" alt="drawing" width="700"/>
+<img src="https://user-images.githubusercontent.com/61325120/131072377-549a695a-4c3f-4193-ba12-994edcbaae74.png" alt="drawing" width="700"/>
 
 
 

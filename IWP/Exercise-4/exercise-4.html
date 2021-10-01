@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise-6 {Forms-JavaScript}</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+#logo{ 
+	position:fixed; 
+	top:0; 
+	left:50px; 
+    bottom:10px;
+    
+} 
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+a:link
+{
+    color:red;
+}
+label:visited
+{
+    color:green;
+}
+label:hover
+{
+    color:pink;
+    font-weight:bold;
+}
+a:active
+{
+    color: yellow;
+    background-color:black;
+    font-size:300%;
+}
+body {
+    text-align: center;
+    background-color:lightgray;
+}
+
+input:focus
+{
+    background-color:lightcoral;
+    color:white;
+}
+input:optional
+{
+    background-color:lightcyan;
+}
+input:valid
+{
+    background-color:lightseagreen;
+    color:white;
+}
+
+#textboxid
+{
+    height:40px;
+    font-size:14pt;
+}  
+</style>
+<script>
+    function validateForm() {
+    var fname = document.forms["myForm"]["fname"].value;
+    var age = document.forms["myForm"]["age"].value;
+    if (fname == null || fname == "" || age == null || age == "" ){
+      alert("Please Fill All Required Field");
+      return false;
+    }
+  }
+
+  function display() { 
+            if(document.getElementById('fruit1').checked) {
+                document.getElementById("disp").innerHTML
+                    = document.getElementById("fruit1").value
+                    + " checked";
+            }
+            else if(document.getElementById('fruit2').checked) {
+                document.getElementById("disp").innerHTML
+                    = document.getElementById("fruit2").value
+                    + " checked";  
+            }
+            else  {
+                document.getElementById("disp").innerHTML
+                    = document.getElementById("fruit3").value
+                    + " checked";  
+            }
+        }
+    
+        function ValidateEmail(inputText)
+        {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(inputText.value.match(mailformat))
+        {
+        alert("Valid email address!");
+        document.myForm.mail.focus();
+        return true;
+        }
+        else
+        {
+        alert("You have entered an invalid email address!");
+        document.myForm.mail.focus();
+        return false;
+        }
+        }
+
+        function ValidateAge(inputText)
+        {
+            var ageformat = /[0-9]{1,2}/;
+            if(inputText.value.match(ageformat))
+            {
+                alert("Valid Age");
+                document.myForm.age.focus();
+                return true;
+            }
+            else
+            {
+                alert("Invalid Age");
+                document.myForm.age.focus();
+                return false;
+
+            }
+        }
+</script>
+</head>
+<body>
+<h1 style="text-align:center;">Exercise-6 {Forms-JavaScript}</h1>
+<h4 style="text-align:center;">Apoorva 19BCE2196</h4>
+<div id="logo">
+<img src="logo.png" style="height:60px;width:60px;">
+</div>
+<div class="container">
+<form name="myForm" action="/action_page.php" target="_blank" onsubmit="return validateForm()" method="post" autocomplete="on">
+    <label for="fname">Name: </label><br>
+    <input id="textboxid" for="text" id="fname" name="fname" autofocus><br><br>
+    <label for="age">Age</label><br>
+    <input id="textboxid" type="text" id="age" name="age"><br><br>
+    <label for="email">Email</label><br>
+    <input id="textboxid" type="text" id="email" name="mail" required><br><br>
+    <label for="number">Number</label><br>
+    <input id="textboxid" type="number" id="number" required max="50"> <br><br>
+    <label for="range">Range</label><br>
+    <input id="textboxid" type="range" id="range"><br><br>
+    <label for="file">File Upload</label>
+    <input type="file" name="file" id="file" accept><br><br>
+    <label for="list" id="list">List</label><br>
+    <input id="textboxid" id="list" list="browsers" name="list">
+    <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Safari">
+        <option value="Opera">
+        <option value="Firefox">
+    </datalist><br><br>
+    <input type="checkbox" id="fruit1" name="fruit1" value="Apple">
+    <label for="fruit1"> I have an apple</label><br>
+    <input type="checkbox" id="fruit2" name="fruit2" value="Mango">
+    <label for="fruit2"> I have a Mango</label><br>
+    <input type="checkbox" id="fruit3" name="fruit3" value="Orange">
+    <label for="fruit3"> I have an Orange</label><br><br>
+    <input class="input" type="text" placeholder="Type something" style="height:200px; width:500px;">
+    <button class="button">Click Me</button><br><br>
+        
+      
+      
+    <input  type="submit" onclick="display(); ValidateEmail(document.myForm.mail); ValidateAge(document.myForm.age);"><br><br>
+    <input type="reset">
+    </form>
+    </div> 
+    <div id="disp" style=
+        "color:green; font-size:18px; font-weight:bold;">
+    </div>
+    </body>
+    <script>
+        let input = document.querySelector(".input");
+        let button = document.querySelector(".button");
+        button.disabled = true;
+        input.addEventListener("change", stateHandle);
+        
+        function stateHandle() {
+            if(document.querySelector(".input").value === "") {
+                button.disabled = true;
+            } else {
+                button.disabled = false;
+            }
+        }
+    </script>
+</html>
